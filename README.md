@@ -13,5 +13,6 @@ Run the `download.sh` script from a terminal:
 ```
 
 The script automatically installs `yt-dlp` and a static `ffmpeg` binary
-(if they are missing) and then downloads every link from `links.txt`
-into the target directory.
+(if they are missing) using pip's `--user` and `--break-system-packages`
+flags. It then downloads every link from `links.txt` into the target
+directory.

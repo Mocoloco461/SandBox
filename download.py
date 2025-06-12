@@ -17,7 +17,16 @@ def ensure_package(pkg: str):
     try:
         __import__(pkg)
     except ImportError:
-        subprocess.check_call([sys.executable, '-m', 'pip', 'install', '--upgrade', '--user', pkg])
+        subprocess.check_call([
+            sys.executable,
+            '-m',
+            'pip',
+            'install',
+            '--upgrade',
+            '--user',
+            '--break-system-packages',
+            pkg,
+        ])
 
 
 def ensure_ffmpeg() -> Path:
